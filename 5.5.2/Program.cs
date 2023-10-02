@@ -8,12 +8,12 @@ namespace _5._5._2
 {
 	internal class Program
 	{
-		static string [] SplitText()
+		static void SplitText()
 		{
 			Console.WriteLine("Введите предложение для реверса");
 			string EnteredText = Console.ReadLine();
 			string [] EnteredTextArray = EnteredText.Split(new char[] { ' ' });
-			return EnteredTextArray;
+			ReverseString(EnteredTextArray);
 		}
 		static void ReverseString(string [] EnteredTextArray)
 		{
@@ -25,7 +25,7 @@ namespace _5._5._2
 		}
 		static void Main(string[] args)
 		{
-			ReverseString(SplitText());
+			SplitText();
 			Console.ReadKey();
 			
 		}
