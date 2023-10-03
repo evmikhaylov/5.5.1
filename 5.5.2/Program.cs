@@ -8,24 +8,27 @@ namespace _5._5._2
 {
 	internal class Program
 	{
-		static void SplitText()
+		static string[] SplitText()
 		{
 			Console.WriteLine("Введите предложение для реверса");
 			string EnteredText = Console.ReadLine();
 			string [] EnteredTextArray = EnteredText.Split(new char[] { ' ' });
-			ReverseString(EnteredTextArray);
+			return EnteredTextArray;
 		}
-		static void ReverseString(string [] EnteredTextArray)
+		static void ReverseString()
 		{
-			Array.Reverse(EnteredTextArray);
-			foreach (var item in EnteredTextArray)
+			string [] ReverseText = SplitText();
+			string FinalReverseText = "";
+			for (int i = ReverseText.Length - 1; i>=0; i--)
 			{
-				Console.Write(item + ' ');
+				FinalReverseText += ReverseText[i] + " ";
 			}
+			Console.WriteLine(FinalReverseText);
+			return;
 		}
 		static void Main(string[] args)
 		{
-			SplitText();
+			ReverseString();
 			Console.ReadKey();
 			
 		}
